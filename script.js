@@ -21,10 +21,19 @@ function startTimer(duration, display) {
     }, 1000);
 }
 
-startButton.addEventListener("click", startTimer) 
+startButton[0].addEventListener("click", function(){
+
+
+
     var fiveMinutes = 60 * 5,
     display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
+
+})
+   
+   
+   
+    // 
 
 
 
@@ -68,4 +77,4 @@ correctAnswer : "a"
 
  }
 
-]
+] */
