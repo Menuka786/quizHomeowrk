@@ -13,21 +13,35 @@
 <body>
     <br>
     <br>
+    
+         
+    
     <div class="boxed">
+        
 
         <div id="quiz">
 
             <h1> Welcome to HTML, CSS and JS Quiz</h1>
             <br>
-            <br>
+            <br>   
 
             <h4> Read the following instruction before you start quiz </h4>
            
             <br>
             <ul>
-                <li> You will be given multi choice questions </li>
-            
+                <li> You will be given 5 multi choice questions, which you have to finish in 5 minutes</li>
+                <li> Your time start when you click Start button</li>
+                <li> At the end of quiz you wll be presented with your score card and form to put your initials.</li>
+                <br>
+                <button type="button" class="btn btn-danger">Start</button>
+                <br>
+                <br>
+
+                <div class = "timerbox"> 
+                    <button type="button" class="btn btn-primary btn-lg"><span id="time">05:00</span> minutes!</div>
+                    </div></button>
             </ul>
+            
             <div id="quizContainer" class="container">
                 <div class="title">HTML, CSS and JS Quiz</div>
                 <div id="question" class="question"></div>
@@ -37,20 +51,7 @@
                 <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
                 <button id="nextButton" class="nxt-btn" onclick="loadNextQuestion();">Next Question</button></button>
             </div>
-            <div class="row">
-                <div class="col-md-5">
-                </div>
-                <div class="col-md-7">
-                    <button type="button" class="btn btn-danger">Start</button>
-
-                </div>
-            </div>
-        </div>
-        
-        <div class = "timerbox"> 
-            <button type="button" class="btn btn-primary btn-lg"><span id="time">05:00</span> minutes!</div>
-            </div></button>
-            
+          
 
 
              
