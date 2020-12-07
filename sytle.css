@@ -1,14 +1,14 @@
 body {
 
 background-color: aliceblue;
-background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT86iJvp54hrck5J0JbDMuDrlQsp_FHJ2VNmw&usqp=CAU)
+background-image: url(https://t3.ftcdn.net/jpg/01/91/95/20/360_F_191952050_FHCSMOmQ5aO7emxMBiVAfUvNBBzKVgIb.jpg)
 }
 
 .boxed 
 {
     
-        width: 400px;
-        height: 600px;
+        width: 1000px;
+        height: 1000px;
         padding: 50px;
         border: 1px solid red;
         box-sizing: border-box;
@@ -18,8 +18,7 @@ background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT86i
         width: 70%;
         border: 15px solid green;
         padding: 15px;
-        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwDovKKHjQVmeeYzNxe1we6rnx1un9gUa7yw&usqp=CAU);
-}
+        background-image: url(https://lh3.googleusercontent.com/proxy/jCpr4B62TSkAiPa0DV00Q-vE84rNXsO9MH4Z5K-9FNN9pMVVvL6pnjeWM7oftKlBEcfRdFBH2EDl0-OAp6sZ7vGc3WwBHGieTVfxmo41ffLyY3kqXt_QRroH) }
 hi {
 
     color: Red;
@@ -50,4 +49,88 @@ color: red;
     background-color: red;
     
       }
-  }
+      .container 
+      {
+          height: 370px;
+          width: 300Px;
+        
+          margin:100px;
+    
+          background: rgba(255,255,255,0.5);
+          padding : 10px;
+          border:1px solid #08038c;
+          box-shadow: 0 0 8px 3px #fff;
+      }
+      
+      .title 
+      {
+      
+          padding-top: 20px
+          text-align: center;
+          font-size: 36px;
+          text-transform: uppercase;
+          color: #08038C;
+      }
+      
+      .question
+      {
+      padding: 20px;
+      font-size: 22px;
+      background-color:lightblue;
+      border-radius: 20px;
+      margin: 10px 0 10px 0;
+      columns: #f6f6f6;
+      
+      
+      }
+      
+      .option{
+      width: 420px;
+      display: inline-block;
+      padding: 10px 0 10px 15px;
+      vertical-align:middle;
+      background: rgba(255,255,255,0.5);
+      margin: 10px 0 10px 10px;
+      color: #000000;
+      border-radius: 20px;
+      } 
+      
+      .option:hover{
+          background: #08038C;
+          color: #f6f6f6;
+      }
+      
+      .nxt-btn{
+      border:solid ;
+      outline: none;
+      background: rgba(255,255,255,0.5);
+      width: 100px;
+      height: 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      float: right;
+      margin: 05px;
+      background-color: red;
+      
+      }
+      
+      .next-btn:hover
+      {
+          background:#08038C;
+          columns: #f6f6f6;
+      }
+      
+      result{
+      height:100px;
+      text-align:center;
+      font-size: 75px;
+      
+      
+      }
+      .option input:checked.option{
+      
+      background: #08038C;
+      color: #000;
+      
+      }
+      

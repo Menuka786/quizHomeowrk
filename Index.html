@@ -26,10 +26,17 @@
             <br>
             <ul>
                 <li> You will be given multi choice questions </li>
-                <li> Click the answer</li>
-                <li> There will be a timer </li>
-                <li> You will get your score at the end</li>
+            
             </ul>
+            <div id="quizContainer" class="container">
+                <div class="title">HTML, CSS and JS Quiz</div>
+                <div id="question" class="question"></div>
+                <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
+                <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
+                <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
+                <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
+                <button id="nextButton" class="nxt-btn" onclick="loadNextQuestion();">Next Question</button></button>
+            </div>
             <div class="row">
                 <div class="col-md-5">
                 </div>
@@ -43,12 +50,13 @@
         <div class = "timerbox"> 
             <button type="button" class="btn btn-primary btn-lg"><span id="time">05:00</span> minutes!</div>
             </div></button>
+            
 
 
              
     </div>
 
-    
+    <script src="./question.js"></script>
     <script src="./script.js"></script>
         
     
