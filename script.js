@@ -33,7 +33,9 @@ startButton[0].addEventListener("click", function(){
 
 })
 
+// We are creating variables to keep track of what question is currently being displayed
 var currentQuestion = 0;
+// Here we create a variable to keep track of the users score
 var score = 0;
 var totQuestions = questions.length;
 
@@ -57,17 +59,25 @@ function loadQuestion(questionIndex) {
 
 function loadNextQuestion() {
   var selectedOption = document.querySelector("input[type=radio]:checked");
+  // User did not make a choice -> 'selectedOption' = false
   if (!selectedOption) {
     alert("Please select your answer!");
     return;
   }
+  // Once we get here then 'selectedOption' = true
+  // We are loading the Users selecter answer choice into a variable
   var answer = selectedOption.value;
   if (questions[currentQuestion].answer == answer) {
     score += 10;
   }
-
+  // We are resetting the variable 'selectedOption' -> We are clearing the radio button inputs
+  //    to be ready for the next question
   selectedOption.checked = false;
+  // Incrementing our Question INDEX
   currentQuestion++;
+  // currentQuestion = currentQuestion + 1;
+
+  // We are checking to see if there are any more questions in our ARRAY
   if (currentQuestion == totQuestions - 1) {
     nextButton.textContent = "Finish";
   }
