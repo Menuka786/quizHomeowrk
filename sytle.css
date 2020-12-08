@@ -89,9 +89,9 @@ color: red;
       display: inline-block;
       padding: 10px 0 10px 15px;
       vertical-align:middle;
-      background: rgba(255,255,255,0.5);
+      
       margin: 10px 0 10px 10px;
-      color: #000000;
+      color: white
       border-radius: 20px;
       } 
       
@@ -120,7 +120,7 @@ color: red;
           columns: #f6f6f6;
       }
       
-      result{
+      #result{
       height:100px;
       text-align:center;
       font-size: 75px;

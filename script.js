@@ -35,7 +35,7 @@ startButton[0].addEventListener("click", function(){
 
 var currentQuestion = 0;
 var score = 0;
-var totQuestions = question.length;
+var totQuestions = questions.length;
 
 var container = document.getElementById("quizContainer");
 var questionEl = document.getElementById("question");
@@ -61,7 +61,6 @@ function loadNextQuestion() {
     alert("Please select your answer!");
     return;
   }
-
   var answer = selectedOption.value;
   if (questions[currentQuestion].answer == answer) {
     score += 10;
@@ -74,9 +73,9 @@ function loadNextQuestion() {
   }
 
   if (currentQuestion == totQuestions) {
-    container.style.display = "none";
-    resultCont.style.display = "";
-    resultCont.textContent = "Your Score : " + score;
+    container.style.display = 'none';
+    resultCont.style.display = '';
+    resultCont.textContent = 'Your Score : ' + score;
     return;
   }
   loadQuestion(currentQuestion);
