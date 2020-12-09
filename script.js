@@ -31,6 +31,7 @@ startButton[0].addEventListener("click", function(){
     display = document.querySelector('#time');
     startTimer(fiveMinutes, display);
    
+    
 
 })
 
@@ -89,6 +90,7 @@ function loadNextQuestion() {
     container.style.display = 'none';
     resultCont.style.display = '';
     resultCont.textContent = 'Your Score : ' + score;
+    
     return;
   }
   loadQuestion(currentQuestion);
