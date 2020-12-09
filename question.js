@@ -1,4 +1,4 @@
-
+// Here am setting a variable = array of questions. 
  var questions = [
     
     {

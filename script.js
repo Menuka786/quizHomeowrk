@@ -1,10 +1,11 @@
+// checking if app is connecting
 console.log("App connecting");
 
-
+//setting variable for start button
 var startButton = document.getElementsByClassName("btn btn-danger");
 
 
-
+// here writing function for timer
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
@@ -21,7 +22,7 @@ function startTimer(duration, display) {
         }
     }, 1000);
 }
-
+//here adding event listener for timer start button. 
 startButton[0].addEventListener("click", function(){
 
 
@@ -33,9 +34,9 @@ startButton[0].addEventListener("click", function(){
 
 })
 
-// We are creating variables to keep track of what question is currently being displayed
+//Here creating variables to keep track of what question is currently being displayed
 var currentQuestion = 0;
-// Here we create a variable to keep track of the users score
+// Here creating a variable to keep track of the users score
 var score = 0;
 var totQuestions = questions.length;
 
@@ -48,6 +49,8 @@ var opt4 = document.getElementById("opt4");
 var nextButton = document.getElementById("nextButton");
 var resultCont = document.getElementById("result");
 
+// this function will load question. 
+
 function loadQuestion(questionIndex) {
   var q = questions[questionIndex];
   questionEl.textContent = (questionIndex + 1) + ". " + q.question;
@@ -56,7 +59,7 @@ function loadQuestion(questionIndex) {
   opt3.textContent = q.option3;
   opt4.textContent = q.option4;
 };
-
+// This function will see if radio button is selected and if not alert will be displayed.
 function loadNextQuestion() {
   var selectedOption = document.querySelector("input[type=radio]:checked");
   // User did not make a choice -> 'selectedOption' = false
@@ -65,23 +68,23 @@ function loadNextQuestion() {
     return;
   }
   // Once we get here then 'selectedOption' = true
-  // We are loading the Users selecter answer choice into a variable
+  // loading the Users selecter answer choice into a variable
   var answer = selectedOption.value;
   if (questions[currentQuestion].answer == answer) {
     score += 10;
   }
-  // We are resetting the variable 'selectedOption' -> We are clearing the radio button inputs
+  // Here resetting the variable 'selectedOption' -> We are clearing the radio button inputs
   //    to be ready for the next question
   selectedOption.checked = false;
   // Incrementing our Question INDEX
   currentQuestion++;
   // currentQuestion = currentQuestion + 1;
 
-  // We are checking to see if there are any more questions in our ARRAY
+  // Here checking to see if there are any more questions in our ARRAY
   if (currentQuestion == totQuestions - 1) {
     nextButton.textContent = "Finish";
   }
-
+//Here making sure that score is displayed only at the end.
   if (currentQuestion == totQuestions) {
     container.style.display = 'none';
     resultCont.style.display = '';
@@ -90,6 +93,7 @@ function loadNextQuestion() {
   }
   loadQuestion(currentQuestion);
 }
+//loading function manually. 
 loadQuestion(currentQuestion);
 
 
