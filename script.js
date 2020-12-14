@@ -1,14 +1,16 @@
+
+
 // checking if app is connecting
 console.log("App connecting");
 
-//setting variable for start button
-var startButton = document.getElementsByClassName("btn btn-danger");
-
+// variable for timer
+var timer = 300;
+var display = document.querySelector('#time');
+var myTimer;
 
 // here writing function for timer
-function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
-    setInterval(function () {
+function startTimer() {
+        myTimer = setInterval(function () {
         minutes = parseInt(timer / 60, 10)
         seconds = parseInt(timer % 60, 10);
 
@@ -18,21 +20,23 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds;
 
         if (--timer < 0) {
-            timer = duration;
+            clearInterval(myTimer);
         }
     }, 1000);
 }
-//here adding event listener for timer start button. 
-startButton[0].addEventListener("click", function(){
 
+var start = document.getElementById("start");
+var timebox = document.getElementById("timebox");
+var instructions = document.getElementById("instructions");
 
-
-    var fiveMinutes = 60 * 5,
-    display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
-   
-    
-
+//here adding event listener for timer start button.
+$('#start').click(function(){
+    startTimer();
+    //loading function manually.
+    loadQuestion(currentQuestion);
+    container.style.display = '';
+    timebox.style.display = '';
+    instructions.style.display = 'none';
 })
 
 //Here creating variables to keep track of what question is currently being displayed
@@ -49,8 +53,9 @@ var opt3 = document.getElementById("opt3");
 var opt4 = document.getElementById("opt4");
 var nextButton = document.getElementById("nextButton");
 var resultCont = document.getElementById("result");
+var initials = document.getElementById("initials");
 
-// this function will load question. 
+// this function will load question.
 
 function loadQuestion(questionIndex) {
   var q = questions[questionIndex];
@@ -58,7 +63,6 @@ function loadQuestion(questionIndex) {
   opt1.textContent = q.option1;
   opt2.textContent = q.option2;
   opt3.textContent = q.option3;
-  opt4.textContent = q.option4;
 };
 // This function will see if radio button is selected and if not alert will be displayed.
 function loadNextQuestion() {
@@ -74,6 +78,9 @@ function loadNextQuestion() {
   if (questions[currentQuestion].answer == answer) {
     score += 10;
   }
+  else {
+    timer -= 10;
+  }
   // Here resetting the variable 'selectedOption' -> We are clearing the radio button inputs
   //    to be ready for the next question
   selectedOption.checked = false;
@@ -87,16 +94,24 @@ function loadNextQuestion() {
   }
 //Here making sure that score is displayed only at the end.
   if (currentQuestion == totQuestions) {
+    clearInterval(myTimer);
     container.style.display = 'none';
-    resultCont.style.display = '';
-    resultCont.textContent = 'Your Score : ' + score;
-    
+    initials.style.display = '';
+
     return;
   }
   loadQuestion(currentQuestion);
 }
-//loading function manually. 
-loadQuestion(currentQuestion);
 
-
-  
+//function to view Score
+function viewScore(){
+  var val = document.querySelector("#initalVal").value;
+  if (!val) {
+    alert("Please enter initials!");
+    return;
+  }
+  localStorage.setItem("score", score);
+  localStorage.setItem("initials", val);
+  resultCont.textContent = 'Your Score : ' + score;
+  resultCont.style.display = '';
+}

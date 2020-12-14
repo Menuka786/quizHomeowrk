@@ -13,51 +13,59 @@
 <body>
     <br>
     <br>
-    
-         
-    
+
+
+
     <div class="boxed">
-        
+
 
         <div id="quiz">
 
             <h1> Welcome to HTML, CSS and JS Quiz</h1>
             <br>
-            <br>   
-
-            <h4> Read the following instruction before you start quiz </h4>
-           
             <br>
-            <ul>
-                <li> You will be given 5 multi choice questions, which you have to finish in 5 minutes</li>
-                <li> Your time start when you click Start button</li>
-                <li> At the end of quiz you wll be presented with your score card.</li>
-                <br>
-                <button type="button" class="btn btn-danger">Start</button>
-                <br>
-                <br>
 
-                <div class = "timerbox"> 
-                    <button type="button" class="btn btn-primary btn-lg"><span id="time">05:00</span> minutes!</div>
-                    </div></button>
-            </ul>
-            
-            <div id="quizContainer" class="container">
+            <div id="instructions">
+              <h4> Read the following instruction before you start quiz </h4>
+
+              <br>
+              <ul>
+                  <li> You will be given 5 multi choice questions, which you have to finish in 5 minutes</li>
+                  <li> Your time start when you click Start button</li>
+                  <li> At the end of quiz you wll be presented with your score card.</li>
+                  <br>
+                  <button id="start" type="button" class="btn btn-danger">Start</button>
+              </ul>
+            </div>
+
+            <div id="timebox" class = "timerbox" style="display:none">
+                <button type="button" class="btn btn-primary btn-lg">
+                  <span id="time">05:00</span> minutes!
+                </button>
+            </div>
+
+            <div id="quizContainer" class="container" style = "display:none;">
                 <div class="title">HTML, CSS and JS Quiz</div>
                 <div id="question" class="question"></div>
                 <label class="option"><input type="radio" name="option" value="1" /> <span id="opt1"></span></label>
                 <label class="option"><input type="radio" name="option" value="2" /> <span id="opt2"></span></label>
                 <label class="option"><input type="radio" name="option" value="3" /> <span id="opt3"></span></label>
-                
-                <button id="nextButton" class="nxt-btn" onclick="loadNextQuestion();">Next Question</button></button>
+
+                <button id="nextButton" class="nxt-btn" onclick="loadNextQuestion();">Next Question</button>
             </div>
+      <div id ="initials" style = "display:none;">
+        <br>
+         Enter Your Initials <input id="initalVal" type="text" />
+         <button  class="nxt-btn" onclick="viewScore();">View Score</button>
+       </div>
     <div id ="result" class="container result" style = "display:none;">
-       
+
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="./question.js"></script>
     <script src="./script.js"></script>
-        
-    
+
+
 
 </body >
 
